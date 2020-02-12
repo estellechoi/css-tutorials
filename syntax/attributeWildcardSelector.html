@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* class 속성 값에 "label"이 포함되는 모든 요소 */
+    [class*="label"] {
+      color: DodgerBlue;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Attribute Selector</h3>
+  <div class="bold">
+    <span class="small">Lorem ipsum dolor sit amet</span>
+  </div>
+  <div>
+    <label class="email-label">Email</label>
+    <input type="text" id="emailInput">
+    <br>
+    <label class="pwd-label">Password</label>
+    <input type="password" id="passwordInput">
+    <br>
+    <input type="button" value="Click">
+
+  </div>
+</body>
+
+</html>
