@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1 {
+            border: 1px solid DodgerBlue;
+        }
+
+        /* margin 이 겹치는 부분은 margin 이 더 큰 box의 margin 값으로 결정된다. */
+        h1:nth-of-type(1) {
+            margin: 100px;
+        }
+
+        h1:nth-of-type(2) {
+            margin: 150px;
+        }
+
+        /* margin-collapsing : 상하 마진값이 어떤 상황에서 겹쳐지는 현상 */
+        li {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <h1>Hello World</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+</body>
+</html>
