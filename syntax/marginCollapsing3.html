@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        #empty {
+            margin-top: 50px;
+            margin-bottom: 100px;
+/*            border: 1px solid orange;*/
+        }
+
+        #normal {
+            background: mediumseagreen;
+            /*
+                두 요소간 margin-collapsing이 있고, 한 요소가 시각적 효과가 없어지면, 없어진 요소의 상하 margin은 더 큰 값으로 겹쳐진다.
+                여기서는 #empty 요소의 margin-top, margin-bottom이 둘 중 큰 값인 100px이 되고 서로 collase 된다.
+            */
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="empty"></div>
+    <div id="normal">Not empty.</div>
+
+</body>
+</html>
