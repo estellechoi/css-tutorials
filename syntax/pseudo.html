@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 가상 클래스 선택자 (pseudo) */
+
+    /* 방문한 적 있는 <a> 태그 */
+    /* :visited의 경우는 보안상의 이유로 아래와 같은 속성만 변경이 가능 */
+    /*
+       color
+       background-color
+       border-color
+       outline-color
+       The color parts of the fill and stroke properties
+    */
+    a:visited {
+      color: red;
+    }
+
+    /* 방문한 적 없는 */
+    a:link {
+      color: black;
+    }
+
+    /* <a> 가 클릭되어 active 상태인동안 스타일 지속 */
+    a:active {
+      color: pink;
+    }
+
+    /* CSS 는 뒤에 선언한 스타일을 우선 적용한다. */
+    a:hover {
+      color: yellow;
+    }
+
+    /* focus 가상클래스 선택자는 제일 뒤에 선언하는 것이 좋다. */
+    a:focus {
+      color: white;
+    }
+
+    input:focus {
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text">
+  <br>
+  <a href="http://www.naver.com">네이버</a>
+  <br>
+  <a href="http://www.naver.com">네이버</a>
+</body>
+
+</html>
