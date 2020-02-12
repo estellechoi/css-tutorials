@@ -7,9 +7,15 @@
   <title>Document</title>
   <style>
     /* Adjacent Sibling Selector */
-    /* only <p> directly following <div> */
+    /* only one sibling <p> element directly following <div> */
     div+p {
       color: tomato;
+    }
+
+    /* General Sibling Selector */
+    /* all sibling <p> elements following <div> */
+    div~p {
+      border: 1px solid DodgerBlue;
     }
   </style>
 </head>
