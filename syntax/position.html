@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        html {
+            border: 1px solid orange;
+            /* position: fixed 인 요소가 있을 경우, 필요에 따라 다른 요소를 가리지 않도록 <html> 이나 <body> 요소에 마진을 준다. */
+            margin-top: 50px;
+        }
+
+        div {
+            border: 5px solid tomato;
+        }
+
+        #child {
+            border: none;
+            background: pink;
+            /*
+                * position: absolute; 상위 요소 중 position: static 이 아닌 가까운 요소를 기준으로 위치한다.
+                    (없을 때는 최상위 요소인 <html>을 기준으로)
+                    부모 요소와의 관계가 사라진다. 따라서 width 값도 부모를 따르지 않고 inline-block 처럼 변한다.
+                    한편, absolute의 default top, left 값은 부모 요소 바로 뒤 원래 있어야 할 위치 (0 아님)
+            */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #sibling {
+            border: none;
+            background: orange;
+            /*
+                * position: fixed; <html> 과의 관계가 사라지고 브라우저 화면을 기준으로 위치한다.
+                    부모 요소와의 관계가 사라진다. 따라서 width 값도 부모를 따르지 않고 inline-block 처럼 변한다.
+                    한편, fixed의 default top, left 값은 부모 요소 바로 뒤 원래 있어야 할 위치 (0 아님)
+            */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+        }
+
+        #friend {
+            border: none;
+            background: mediumseagreen;
+            height: 10000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="other">other</div>
+    <div id="grand">
+        grand
+        <div id="parent">
+            parent
+            <div id="child">child</div>
+            <div id="sibling">sibling</div>
+        </div>
+    </div>
+    <div id="friend">friend</div>
+</body>
+</html>
