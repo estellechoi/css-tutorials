@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 부모 요소가 시각적으로 효과가 없게되면(투명하면) 부모/자식 중 margin 값이 더 큰 값으로 margin이 겹쳐진다. */
+        #parent {
+            border: 1px solid tomato;
+            margin-top: 100px;
+        }
+
+        #child {
+            background: dodgerblue;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child">
+            Margin Collapsing
+        </div>
+    </div>
+</body>
+</html>
