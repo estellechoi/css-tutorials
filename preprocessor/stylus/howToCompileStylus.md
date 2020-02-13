@@ -4,4 +4,14 @@
 
 
 ### 2. Use stylus in Mac terminal.
+ - Install stylus with npm.
 ![stylus](../../image/stylusInstallNpm.png)
+
+ - Click [here](https://github.com/stylus/stylus) to see usage.
+ 
+ - Basic usage (`-w` means watch option.)
+ `stylus style.styl -o style.css`
+ 
+ `stylus -w style.styl -o style.css`
+ 
+ 
