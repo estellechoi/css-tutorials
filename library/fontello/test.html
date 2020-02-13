@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 벡터 이미지를 폰트 처럼 사용하기 -->
+
+    <!-- fontello 에서 다운로드 받은 css 파일 임포트 -->
+    <link rel="stylesheet" href="fontello-9a314562/css/fontello.css">
+    <link rel="stylesheet" href="fontello-9a314562/css/animation.css">
+    <style>
+        body {
+            color: tomato;
+            /*
+                font-family: "fontello"
+                Unicode 로 아이콘 나타낼 때 필요 !
+            */
+        }
+
+        #test:before {
+            content: "s";
+            color: red;
+        }
+
+        #test:after {
+            content: "e";
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        Unicode 로 아이콘 나타내기
+
+        아이콘의 Unicode는 fontello 에서 다운로드 받은 demo.html 열어서 코드보기
+        0 : &# 로 치환
+        ex) 0xe801 -> &#xe801
+        &#xe801
+        &#xe802
+    -->
+
+    <!--
+        <i> 태그와 class="icon-name" 를 사용해서 아이콘 나타내기
+
+        * 원리 (fontello.css에 따라)
+        .icon-ok:before 선택자를 통해 <i> 태그에 특정한 문자가 주입되고 그것이 아이콘 폰트로 나타난다.
+        .icon- 요소에 font-family: "fontello"가 적용된다. (웹폰트)
+    -->
+    <i class="icon-ok animate-spin"></i>
+
+
+    <!-- 원리 -->
+    <div id="test">A</div>
+
+</body></html>
