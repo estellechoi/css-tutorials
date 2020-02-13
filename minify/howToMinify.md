@@ -9,11 +9,17 @@
 
 
 ### 3. Install and Use 'clean-css-cli' in Mac Terminal.
+ - Install clean-css and clean-css-cli with npm.
+ 
 `sudo npm install -g clean-css`
 
 `sudo npm install -g clean-css-cli`
 
+ - Use command 'cleancss' to minify css files.
+
 `cleancss -o original_file.min.css original_file.css`
+
+ - Use command 'cat' to see the content of minified files.
 
 `cat original_file.min.css`
 
