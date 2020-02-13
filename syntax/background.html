@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            border: 5px solid gray;
+            margin: 5px auto;
+            font-size: 100px;
+            height: 1000px;
+            overflow: hidden;
+        }
+
+        div:nth-of-type(1) {
+            background: tomato;
+            /* background-image가 background-color 보다 위에 위치한다. */
+            /* 배경이 투명한 아이콘 이미지로 확인해보았다. */
+            background-image: url("../image/like_icon.png");
+            background-repeat: repeat-x;
+            /* background-image 가 스크롤되지 않도록 고정 */
+            background-attachment: fixed;
+            /* background-size: width height; */
+            background-size: 200px 200px;
+
+            /* 축약형 */
+            /* background: tomato url("../image/like_icon.png") repeat-x fixed center; */
+        }
+
+        div:nth-of-type(2) {
+            background: tomato;
+            background-image: url("../image/like_icon.png");
+            background-size: 200px 200px;
+            background-repeat: no-repeat;
+            /* backround-position: 좌우 상하 (background-repeat: no-repeat 일 때 사용 가능) */
+            background-position: center top;
+        }
+
+        div:nth-of-type(3) {
+            background-image: url("../image/wallpaper_beatles.jpeg");
+            /*
+                background-size: contain; 요소 내에 background-image가 모두 들어오도록 축소한다.
+                background-size: cover; 요소에 여백이 생기기 않도록 background-image를 확대해서 덮게 한다.
+            */
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non enim varius, varius dolor vitae, porta leo. Ut tempor elit in arcu hendrerit, lobortis pharetra neque finibus. Proin vestibulum felis a diam sodales ultricies. Fusce semper dui a leo imperdiet pulvinar. Vivamus ullamcorper metus eleifend euismod ultricies. Donec in porta urna, ullamcorper feugiat ante. Praesent laoreet metus sit amet nulla convallis, non sagittis nibh convallis.
+    </div>
+    <div></div>
+    <div></div>
+</body></html>
