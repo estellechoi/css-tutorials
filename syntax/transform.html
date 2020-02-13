@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1 {
+            background: tomato;
+            color: white;
+            display: inline-block;
+            padding: 5px;
+            font-size: 2rem;
+            margin: 100px;
+            transition: all 1s;
+            /*
+                * transform-origin : transform 의 기준점을 지정한다.
+                transform-origin: x-origin y-origin;
+                transform-origin: left top;
+            */
+            transform-origin: 100% 100%;
+        }
+
+        h1:hover {
+            transition: all 1s;
+            /*
+                * transform : 요소의 원래 모양을 기준으로 변형시킨다.
+                transform 속성을 여러개 적용하고 싶을 때는 띄어쓰기로 구분해 작성한다.
+            */
+            /*
+                scaleX(n); 너비를 n배 키운다.
+                transform: scaleX(2) scaleY(2);
+                transform: scale(1.5, 1.5);
+            */
+            transform: scale(1.5);
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Hello Transform</h1>
+</body>
+
+</html>
