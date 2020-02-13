@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 모든 요소의 사이즈를 지정할 때, border width를 포함하도록 한다. */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* float 요소들을 담을 때 요소들의 줄바꿈을 방지하기 위해 컨테이너 요소의 width를 고정한다.(float 요소들의 너비의 합) */
+        .container {
+            width: 700px;
+            border: 1px solid dodgerblue;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid dodgerblue;
+        }
+
+        nav {
+            float: left;
+            width: 150px;
+            border-right: 1px solid dodgerblue;
+        }
+
+        article {
+            float: left;
+            /* float 요소는 위치할 자리의 크기가 부족하면 줄을 바꾸어 내려간다. */
+            /* 줄바꿈을 방지하기 위해 너비를 알맞게 지정해야 한다. (block 요소의 default width는 100% 이므로 별도 지정 필요)*/
+            width: 400px;
+            /* margin을 이용하여 <nav>, <article>, <aside>간 맞닿는 border를 겹쳐 깔끔하게 만들기 */
+            margin-left: -1px;
+            margin-right: -1px;
+            border-left: 1px solid dodgerblue;
+            border-right: 1px solid dodgerblue;
+        }
+
+        aside {
+            float: left;
+            width: 150px;
+            border-left: 1px solid dodgerblue;
+        }
+
+        /* <footer> 부터는 float 요소와의 관계 끊기 (clear) */
+        footer {
+            clear: both;
+            border-top: 1px solid dodgerblue;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Float Layout</h1>
+        </header>
+        <nav>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>javascript</li>
+            </ul>
+        </nav>
+        <article>
+            <h2>Float</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo leo non ultrices blandit. Nulla pretium tincidunt metus quis finibus. Pellentesque pharetra metus in eros commodo, a congue urna convallis. Mauris a tincidunt est. Quisque non euismod lacus. Suspendisse potenti. Nam quis mi vitae ipsum malesuada egestas. Quisque vitae congue mauris. Donec nec ex mollis eros porta vulputate sed vel magna. Nunc scelerisque ornare eros. Aenean sit amet lorem at magna placerat dignissim.
+            </p>
+        </article>
+        <aside>
+            add
+        </aside>
+        <footer>
+            footer
+        </footer>
+    </div>
+</body>
+</html>
