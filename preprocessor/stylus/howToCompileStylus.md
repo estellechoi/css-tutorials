@@ -9,9 +9,10 @@
 
  - Click [here](https://github.com/stylus/stylus) to see usage.
  
- - Basic usage (`-w` means watch option.)
+ - Basic usage 
+ 
  `stylus style.styl -o style.css`
  
- `stylus -w style.styl -o style.css`
+ `stylus -w style.styl -o style.css` (`-w` : watch option)
  
  
