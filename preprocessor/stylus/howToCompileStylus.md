@@ -11,8 +11,9 @@
  
  - Basic usage 
  
- `stylus style.styl -o style.css`
+    `stylus style.styl -o style.css`
  
- `stylus -w style.styl -o style.css` (`-w` : watch option)
+    
+    `stylus -w style.styl -o style.css` (`-w` : watch option)
  
  
