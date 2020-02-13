@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        a {
+            /* rem : <html> 의 font-size 크기를 기준으로 한다. */
+            font-size: 2rem;
+            display: inline-block;
+            /* <a> 요소가 특정 상태에서 원래 상태로 전환될 때 */
+            /* transition 축약형 */
+            transition: font-size 0.5s, transform 2s;
+        }
+
+        a:active {
+            /* transform 속성은 block 요소에만 사용 가능하다. (a 태그는 원래 inline 요소이다.) */
+            transform: translate(20px, 0);
+            font-size: 3rem;
+            /* <a> 요소가 active 상태로 전환될 때 */
+            transition-property: font-size transform;
+            transition-duration: 1s;
+            transition-delay: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Click</a>
+</body></html>
