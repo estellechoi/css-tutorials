@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("../image/wallpaper_beatles.jpeg");
+            background-size: contain;
+        }
+
+        .blend {
+            font-size: 2rem;
+            font-weight: bold;
+            color: red;
+            /*
+                blend: 이미지와 이미지를 섞은 효과를 준다.
+                background-blend-mode : background 속성들을 섞은 효과를 준다.
+                mix-blend-mode : 상위 요소의 background와 현재 요소의 content를 섞은 효과를 준다.
+            */
+            mix-blend-mode: screen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blend">
+        <h1>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </h1>
+        Nunc non enim varius, varius dolor vitae, porta leo. Ut tempor elit in arcu hendrerit, lobortis pharetra neque finibus. Proin vestibulum felis a diam sodales ultricies. Fusce semper dui a leo imperdiet pulvinar. Vivamus ullamcorper metus eleifend euismod ultricies. Donec in porta urna, ullamcorper feugiat ante. Praesent laoreet metus sit amet nulla convallis, non sagittis nibh convallis.
+    </div>
+</body></html>
