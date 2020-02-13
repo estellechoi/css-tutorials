@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            transition: background-color 1s;
+        }
+
+        div {
+            background-color: tomato;
+            color: white;
+            padding: 10px;
+            width: 100px;
+            height: 100px;
+
+            /* <div> 요소가 특정 상태로 전환될 때, 특정 상태에서 원래 상태로 돌아올 때 모두 적용 */
+
+            /* Ceaser 툴에서 제공하는 easeInBack 을 구현하기 위한 cubic-bezier() 함수값 */
+            /* older webkit */
+            -webkit-transition: all 500ms cubic-bezier(0.600, 0, 0.735, 0.045);
+            -webkit-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            -moz-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            -o-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            /* easeInBack */
+            transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+            /* older webkit */
+            -webkit-transition-timing-function: cubic-bezier(0.600, 0, 0.735, 0.045);
+            -webkit-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            -moz-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            -o-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            /* easeInBack */
+            transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+        }
+
+        div:hover {
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>TRANSITION</div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            document.body.style.backgroundColor = "tomato";
+        });
+    </script>
+</body></html>
