@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            border-bottom: 1px solid dodgerblue;
+            padding-left: 20px;
+        }
+
+        footer {
+            border-top: 1px solid dodgerblue;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content-section {
+            display: flex;
+        }
+
+        .content-section main {
+            padding: 10px;
+        }
+
+        .content-section nav {
+            border-right: 1px solid dodgerblue;
+        }
+
+        .content-section aside {
+            border-left: 1px solid dodgerblue;
+        }
+
+        /* flex item 의 너비를 고정 */
+        .content-section nav, .content-section aside {
+            flex-basis: 150px;
+            flex-shrink: 0;
+        }
+
+        /* cascading 규칙을 고려해, media query 는 아래에 작성 */
+        @media(max-width:500px) {
+            .content-section {
+                /* flex 방향 변경 */
+                flex-direction: column;
+            }
+
+            .content-section nav, .content-section aside {
+                border: none;
+                /* item 너비를 고정에서 자동으로 변경 */
+                flex-basis: auto;
+            }
+
+            /*
+                <main> 요소의 순서를 제일 앞으로 변경
+                (가장 앞순서였던 <nav>의 order: 0(default) 이므로 더 작은 숫자를 <main>의 order로 지정한다.)
+            */
+            .content-section main {
+                order: -1;
+            }
+
+            /* 너비 500px 이하에서 광고 박스는 display: none 으로 변경 */
+            .content-section aside {
+                display: none;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Holy Grail Layout (성배 레이아웃) & Media Query</h1>
+        </header>
+        <section class="content-section">
+            <nav>
+                <ul>
+                    <li>html</li>
+                    <li>css</li>
+                    <li>javascript</li>
+                </ul>
+            </nav>
+            <main>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo leo non ultrices blandit. Nulla pretium tincidunt metus quis finibus. Pellentesque pharetra metus in eros commodo, a congue urna convallis. Mauris a tincidunt est. Quisque non euismod lacus. Suspendisse potenti. Nam quis mi vitae ipsum malesuada egestas. Quisque vitae congue mauris. Donec nec ex mollis eros porta vulputate sed vel magna. Nunc scelerisque ornare eros. Aenean sit amet lorem at magna placerat dignissim.
+            </main>
+            <aside>
+                AD
+            </aside>
+        </section>
+        <footer>
+            <a href="#">Test Link</a>
+        </footer>
+    </div>
+</body>
+</html>
