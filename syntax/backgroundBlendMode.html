@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .blend {
+            height: 500px;
+            background-color: rgba(255, 0, 0, 0.1);
+            background-image: url("../image/wallpaper_beach.jpg");
+            background-size: cover;
+            /* background color 와 image 를 섞는다. */
+            background-blend-mode: hue;
+            /* 마우스 아웃될 때 */
+            transition: background-color 5s;
+        }
+
+        .blend:hover {
+            /* background-color 의 투명도 변경 */
+            background-color: rgba(255, 0, 0, 1);
+            /* 마우스 오버될 때 */
+            transition: background-color 5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Beatles</h1>
+    <div class="blend">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non enim varius, varius dolor vitae, porta leo. Ut tempor elit in arcu hendrerit, lobortis pharetra neque finibus. Proin vestibulum felis a diam sodales ultricies. Fusce semper dui a leo imperdiet pulvinar. Vivamus ullamcorper metus eleifend euismod ultricies. Donec in porta urna, ullamcorper feugiat ante. Praesent laoreet metus sit amet nulla convallis, non sagittis nibh convallis.
+    </div>
+</body></html>
