@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+        }
+
+        .svg {
+            background-image: url(../image/sample_vector.svg);
+            background-size: 200px 200px;
+            border: 1px solid dodgerblue;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        svg는 백터(vector) 이미지를 표현하기 위한 포맷으로 w3c에서 만든 백터 이미지 표준
+    -->
+    <h3>Bitmap Image (png)</h3>
+    <img src="../image/sample_bitmap.png" alt="bitmap">
+    <br>
+    <h3>Vector Image (svg)</h3>
+    <img src="../image/sample_vector.svg" alt="vector">
+    <h3>Background SVG</h3>
+    <div class="svg"></div>
+</body></html>
