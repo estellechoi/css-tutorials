@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<!-- declares html version as 5. -->
+
+<html lang="en">
+<!-- <html> : be the root element of html document. -->
+
+<head>
+    <!-- <head> : have tags for metadata, which is data browser can read about this document. -->
+
+    <meta charset="UTF-8">
+    <!-- <meta> : other metadata which cannot be declared with semantic metadata tags like link, script, title, etc. -->
+
+    <title>Document</title>
+    <!-- <title> : the title of this document visible on browser's tab. -->
+
+    <base href="../">
+    <!-- <base> : declares the root url for all URLs to be based on in this doc.
+         * only one <base> can be declared in a doc. -->
+
+    <link rel="stylesheet" href="../css/h1_color.css">
+    <!-- <link> : outsource needed resources like css files.
+         * rel : relationship b/w imported resource and this doc.
+         * href : path to resource. -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        article {
+            border: 1px solid #eeeeee;
+            margin: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-section {
+            display: flex;
+        }
+
+        .flex-section nav,
+        .flex-section aside {
+            flex-basis: 150px;
+            flex-shrink: 0;
+        }
+
+        .flex-section main {
+            flex-grow: 1;
+        }
+
+        .flex-section nav {
+            border-right: 1px solid dodgerblue;
+        }
+
+        .flex-section aside {
+            border-left: 1px solid dodgerblue;
+        }
+
+        header {
+            height: 3rem;
+            background-color: dodgerblue;
+
+        }
+
+        header h2 {
+            color: white;
+            margin: 0;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        .forecast {
+            margin: 0 auto;
+
+        }
+    </style>
+    <!-- <style> : CSS -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- <header> : for logo, search box, etc. -->
+        <header>
+            <h2>header</h2>
+        </header>
+        <section class="flex-section">
+
+            <!-- <nav> : navigation element -->
+            <nav>Menu</nav>
+
+            <!-- <main> : main element -->
+            <main>
+
+                <!-- <hgroup> : groups heading tags. -->
+                <hgroup>
+                    <h1>Hello HTML</h1>
+                    <h2>HEllo HTML</h2>
+                </hgroup>
+
+
+                <!-- <article> : can be re-used as an independant element with its article subject. -->
+                <article class="forecast">
+                    <h1>Weather forecast for Seattle</h1>
+                    <article class="day-forecast">
+                        <h2>03 March 2018</h2>
+                        <p>Rain.</p>
+                    </article>
+                    <article class="day-forecast">
+                        <h2>04 March 2018</h2>
+                        <p>Periods of rain.</p>
+                    </article>
+                    <article class="day-forecast">
+                        <h2>05 March 2018</h2>
+                        <p>Heavy rain.</p>
+                    </article>
+
+
+                    <h1>Contact for the author</h1>
+                    <!-- <address> : for address. -->
+                    <address>
+                        <a href="mailto:jim@rock.com">jim@rock.com</a><br>
+                        <a href="tel:+13115552368">(311) 555-2368</a>
+                    </address>
+                </article>
+            </main>
+
+            <!-- <aside> : -->
+            <aside>AD</aside>
+        </section>
+
+        <!-- <footer> : footer for the element followed by this footer.-->
+        <footer>
+            <p>© 2020 Youjin</p>
+        </footer>
+    </div>
+</body></html>
