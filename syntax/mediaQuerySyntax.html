@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+            Media Query Syntax
+
+            * media type: all, print, screen, ...
+            * media feature: width, orientation(landscape(가로)/portrait(세로)), ...
+
+            1) media_query_list
+               S* [media_query [ ',' S* media_query ]* ]?
+
+            2) media_query
+               [ONLY | NOT]? S* media_type S* [ AND S* expression ]* | expression [ AND S* expression ]*
+
+            3) expression
+               '(' S* media_feature S* [ ':' S* expr ]? ')' S*
+
+
+
+        */
+
+        /* media type: screen */
+        @media screen {
+            body {
+                background: tomato;
+            }
+        }
+
+        /* media type: screen && feature: 800px 이상 */
+        @media screen and (min-width: 800px) {
+            body {
+                background: tomato;
+            }
+        }
+
+        /* media type: screen && feature: 800px 이상 */
+        /* media type: screen && feature: 디바이스 화면이 세로모드(portrait) */
+        @media screen and (min-width: 800px),
+        screen and (orientation: portrait) {
+            body {
+                background: tomato;
+            }
+        }
+
+        /* media type: not screen && feature: not 800px 이상 */
+        @media not screen and (min-width: 800px) {
+            body {
+                background: tomato;
+            }
+        }
+
+        /* media: all && feature: 800px 이상 */
+        @media (min-width: 800px) {
+            body {
+                background: tomato;
+            }
+        }
+
+        /* feature: 800px 이상 && 1000px 이하 */
+        @media (min-width: 800px) and (max-width: 1000px) {
+            body {
+                background: tomato;
+            }
+        }
+
+        /* feature: 디바이스가 color-index를 지원 */
+        @media (color-index) {
+            body {
+                background: tomato;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
