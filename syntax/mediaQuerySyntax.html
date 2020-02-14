@@ -75,10 +75,23 @@
             }
         }
 
+        /* media type: print (인쇄 모드) */
+        @media print {
+            a {
+                text-decoration: none;
+            }
+
+            /* <a> 바로 뒤에 스타일로서의 content: (속성 href 값) */
+            a:after {
+                content: '('attr(href)')';
+            }
+        }
+
     </style>
 </head>
 
 <body>
+    <a href="https://www.w3.org/TR/mediaqueries-4/">Media Query Level 4</a>
 
 </body>
 
