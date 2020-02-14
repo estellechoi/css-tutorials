@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- declares html version as 5. -->
 
@@ -18,7 +17,7 @@
     <!-- <base> : declares the root url for all URLs to be based on in this doc.
          * only one <base> can be declared in a doc. -->
 
-    <link rel="stylesheet" href="../css/h1_color.css">
+    <!--    <link rel="stylesheet" href="../css/h1_color.css">-->
     <!-- <link> : outsource needed resources like css files.
          * rel : relationship b/w imported resource and this doc.
          * href : path to resource. -->
@@ -31,14 +30,53 @@
             margin: 0;
         }
 
-        h1,
-        h2 {
-            text-align: center;
-        }
 
         article {
             border: 1px solid #eeeeee;
-            margin: 10px;
+            margin: 0.8rem;
+            padding: 0.8rem;
+        }
+
+        details {
+            border: 1px solid dodgerblue;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+        }
+
+        figure {
+            width: 30rem;
+            border: 1px solid dodgerblue;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        figcaption {
+            border-top: 1px solid dodgerblue;
+            border-radius: 5px;
+            padding: 0.2rem 0;
+            text-align: center;
+        }
+
+        img {
+            width: 30rem;
+        }
+
+        header {
+            padding: 1rem 0;
+            background-color: dodgerblue;
+
+        }
+
+        header h1 {
+            color: white;
+            margin: aut
+                /* ?? */
+        }
+
+        footer {
+            padding: 1.3rem 0;
+            text-align: center;
+            background-color: antiquewhite;
         }
 
         .container {
@@ -52,7 +90,7 @@
 
         .flex-section nav,
         .flex-section aside {
-            flex-basis: 150px;
+            flex-basis: 10rem;
             flex-shrink: 0;
         }
 
@@ -68,27 +106,10 @@
             border-left: 1px solid dodgerblue;
         }
 
-        header {
-            height: 3rem;
-            background-color: dodgerblue;
-
-        }
-
-        header h2 {
-            color: white;
-            margin: 0;
-        }
-
-        footer {
-            padding: 20px 0;
-            text-align: center;
-            background-color: antiquewhite;
-        }
-
         .forecast {
-            margin: 0 auto;
-
+            margin: 1rem;
         }
+
     </style>
     <!-- <style> : CSS -->
 </head>
@@ -97,7 +118,7 @@
     <div class="container">
         <!-- <header> : for logo, search box, etc. -->
         <header>
-            <h2>header</h2>
+            <h1>Header</h1>
         </header>
         <section class="flex-section">
 
@@ -106,13 +127,6 @@
 
             <!-- <main> : main element -->
             <main>
-
-                <!-- <hgroup> : groups heading tags. -->
-                <hgroup>
-                    <h1>Hello HTML</h1>
-                    <h2>HEllo HTML</h2>
-                </hgroup>
-
 
                 <!-- <article> : can be re-used as an independant element with its article subject. -->
                 <article class="forecast">
@@ -129,14 +143,50 @@
                         <h2>05 March 2018</h2>
                         <p>Heavy rain.</p>
                     </article>
+                </article>
 
 
-                    <h1>Contact for the author</h1>
+                <article>
+                    <!-- <hgroup> : groups heading tags. -->
+                    <h1>SEMANTICS</h1>
+
+                    <!-- <mark> : highlights inline texts. -->
+                    <h2>MARK TAG</h2>
+                    <p>
+                        <mark>Lorem ipsum dolor sit amet</mark>, consectetur adipiscing elit. Duis molestie massa metus, porta bibendum nunc convallis in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam aliquam diam mauris, in faucibus lectus efficitur id. Etiam nibh neque, consequat sit amet sem et, mollis congue mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec eros metus, scelerisque at nibh sit amet, tempus vehicula magna. Nam ut aliquam velit. Morbi aliquet interdum ipsum non bibendum.
+                    </p>
+
+                    <!-- <time> : represents a specific period in time. -->
+                    <h2>TIME TAG</h2>
+                    <p>
+                        The Cure will be celebrating their 40th anniversary on <time datetime="2018-07-07">July 7</time> in London's Hyde Park.
+                    </p>
+                    <p>
+                        The concert starts at <time datetime="20:00">20:00</time> and you'll be able to enjoy the band for at least <time datetime="PT2H30M">2h 30m</time>.
+                    </p>
+
                     <!-- <address> : for address. -->
+                    <h2>Contact for the author</h2>
                     <address>
                         <a href="mailto:jim@rock.com">jim@rock.com</a><br>
                         <a href="tel:+13115552368">(311) 555-2368</a>
                     </address>
+
+                    <!-- <datails> : hide details with button to show them.  -->
+                    <h2>Hidden Details</h2>
+                    <details>
+                        <!-- <summary> : visible summary for hidden details. -->
+                        <summary>Details</summary>
+                        Something small enough to escape casual notice.
+                    </details>
+
+                    <!-- <figure> : represents self-contained content. -->
+                    <h2>Figuration</h2>
+                    <figure>
+                        <img src="../image/cssCheatSheet.png" alt="Elephant at sunset">
+                        <!-- <figcaption> : caption for this <figure> -->
+                        <figcaption>CSS Cheat Sheet</figcaption>
+                    </figure>
                 </article>
             </main>
 
@@ -149,4 +199,6 @@
             <p>© 2020 Youjin</p>
         </footer>
     </div>
-</body></html>
+</body>
+
+</html>
