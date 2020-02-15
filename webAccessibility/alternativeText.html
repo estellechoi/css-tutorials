@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            width: 30rem;
+        }
+
+        img.img_qr {
+            width: 10rem;
+        }
+
+        img.img_link {
+            width: 5rem;
+        }
+
+        img.icon {
+            width: 1rem;
+            cursor: pointer;
+        }
+
+        .link_page {
+            background-image: url(../image/sample_vector.svg);
+            background-size: 10rem;
+        }
+
+        .capcha {
+            width: 15rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+       스크린 리더는 alt 속성값으로 제공된 텍스트를 해석해서 음성으로 출력한다.
+       alt 속성을 생략하면, 대신 경로 정보인 src 값을 음성으로 출력한다.
+       따라서 아무 의미가 없는 이미지이기 때문에 대체텍스트를 제공하지 않더라도,
+       alt 속성을 생략하면 안된다. (alt="" 와 같이 공백문자라도 작성)
+    -->
+    <h1>img 태그의 alt 속성으로 대체 텍스트 제공하기</h1>
+    <img src="../image/flexBox.png" alt="Flex Container 요소에 사용하는 속성은 display, flex direction, flex wrap, flex flow, justyfy content, align items, align content 이다. Item 요소에 사용하는 속성은 order, flex grow, flex shrink, flex basis, flex, align self 이다.">
+    <hr>
+
+    <!--
+        display: none/visivility: hidden을 사용하면 스크린 리더가 읽을 수 없다.
+    -->
+    <h1>마크업으로 대체 텍스트 제공하기</h1>
+    <img src="../image/flexBox.png" alt="">
+    <div class="blind">
+        <ul>
+            Container
+            <li>display</li>
+            <li>flex direction</li>
+            <li>flex wrap</li>
+            <li>flex flow</li>
+            <li>justyfy content,</li>
+            <li>align items</li>
+            <li>align content</li>
+        </ul>
+        <ul>
+            Item
+            <li>order</li>
+            <li>flex grow</li>
+            <li>flex shrink</li>
+            <li>flex basis</li>
+            <li>flex</li>
+            <li>align self</li>
+        </ul>
+    </div>
+    <hr>
+
+    <h1>기능이 있는 이미지/배경이미지</h1>
+    <img src="../image/like_icon.png" alt="좋아요 누르기" class="icon">
+    <br>
+    <a href="#" class="link_page">페이지 이동</a>
+    <hr>
+
+    <!--
+       QR코드를 사용할 수 없으므로 페이지 주소를 제공한다.
+   -->
+    <h1>QR코드 이미지</h1>
+    <a href="https://www.naver.com/">
+        <img src="../image/qr.png" alt="https://www.naver.com 바로 가기 QR 코드" class="img_qr">
+    </a>
+    <hr>
+
+    <!--
+       같은 내용이 중복으로 읽히지 않도록 한다.
+   -->
+    <h1>썸네일 이미지</h1>
+    <a href="#">
+        <img src="../image/wallpaper_beach.jpg" alt="" class="img_link"><br>
+        <span>해변</span>
+    </a>
+    <hr>
+
+    <!--
+        * 캡차란 ? 사용자가 실제 사람인지 컴퓨터 프로그램인지를 구별하기 위해 사용되는 방법
+          캡차 이미지의 대체텍스트로 이미지에 있는 텍스트를 제공하면 스크린리더 사용자에게 정답을 알려주는 것이 되므로,
+          캡차 이미지의 대체텍스트는 '캡차' 또는 '보안 문자'라고 제공하고 따로 음성으로 들을 수 있도록 청각적 캡차를 제공해야 한다.
+   -->
+    <h1>캡차 이미지</h1>
+    <img src="../image/capcha.gif" alt="보안 문자" class="capcha">
+    <hr>
+
+    <h1>사용자가 업로드하는 이미지</h1>
+    사용자가 업로드하는 이미지의 경우 사용자가 직접 대체 텍스트를 작성할 수 있도록 안내와 함께 툴을 제공한다. <br>
+    사용자가 입력한 내용이 대체 텍스트로 제공되도록 구현한다.
+
+</body></html>
