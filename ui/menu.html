@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        @charset "UTF-8";
+
+        .wrap {
+            margin: 0.5rem;
+            /* 브라우저 화면이 줄어들어도, 메뉴 영역은 최소 500px 까지 너비 줄임 가능 */
+            min-width: 500px;
+        }
+
+        /* 각 메뉴 셀을 테이블 그리드 UI로 배치 */
+        .menu {
+            display: table;
+            width: 100%;
+            /* 각 메뉴 너비를 균등하게 */
+            table-layout: fixed;
+        }
+
+        .menu_item {
+            display: table-cell;
+        }
+
+        .menu_link {
+            display: block;
+            height: 3rem;
+            border: 1px solid dodgerblue;
+            font-size: 1rem;
+            line-height: 3rem;
+            color: dodgerblue;
+            text-align: center;
+        }
+
+        /* 외곽선 겹침 현상 해결 */
+        /* 다음요소가 .menu_item 일 때, .menu_link 에 적용 */
+        .menu_item+.menu_item .menu_link {
+            margin-left: -1px;
+        }
+
+        .menu_item:hover .menu_link {
+            color: white;
+            background-color: dodgerblue;
+            font-weight: bold;
+        }
+
+        /* 현재 메뉴 */
+        .menu_item.active .menu_link {
+            /* ?? */
+            position: relative;
+            font-weight: bold;
+            border-color: #555555;
+            background: gray;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="menu">
+            <li class="menu_item"><a href="#" class="menu_link">메일</a></li>
+            <li class="menu_item active"><a href="#" class="menu_link">카페</a></li>
+            <li class="menu_item"><a href="#" class="menu_link">소프트웨어</a></li>
+            <li class="menu_item"><a href="#" class="menu_link">지식백과</a></li>
+            <li class="menu_item"><a href="#" class="menu_link">영화</a></li>
+        </ul>
+    </div>
+</body></html>
