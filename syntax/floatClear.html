@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box_wrap {
+            border: 1px solid dodgerblue;
+        }
+
+        .box_parent {
+            border: 1px solid tomato;
+            /*
+                부모 요소에 overflow 속성을 주면 (visible 제외), 자식 요소의 float 속성이 해제된다.
+                단점 : 보여야 할 다른 요소가 가려질 수 있다.
+            */
+            /*            overflow: hidden;*/
+        }
+
+        /* semantic html 을 위해 CSS 가상 선택자를 사용하여 clear 속성을 이용한다. */
+        .box_parent:after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .box {
+            float: left;
+            width: 10rem;
+            height: 10rem;
+        }
+
+        .box1 {
+            background: pink;
+            opacity: 0.5;
+
+        }
+
+        .box2 {
+            background: yellow;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box_wrap">
+        <div class="box_parent">
+            <div class="box box1">box1</div>
+            <div class="box box2">box2</div>
+        </div>
+    </div>
+</body></html>
