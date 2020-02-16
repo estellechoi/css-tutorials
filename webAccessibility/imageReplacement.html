@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrap {
+            position: relative;
+            background: url("../image/cssCheatSheet.png") no-repeat 0 0;
+            /* 이미지의 크기에 맞게 크기를 고정한다. */
+            width: 696px;
+            height: 497px;
+            margin: 0 auto;
+        }
+
+        .blind {
+            /* 레이아웃에 영향을 미치지 않도록 */
+            position: absolute;
+            /* 직사각형으로 요소를 잘라서 보여준다 */
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .link_more {
+            position: absolute;
+            left: 1rem;
+            bottom: 2rem;
+            width: 4rem;
+            height: 2rem;
+            /*            background-color: dodgerblue;*/
+            /*            opacity: 0.5;*/
+        }
+    </style>
+</head>
+
+<body>
+    <!--    <img src="../image/cssCheatSheet.png" alt="CSS Cheat Sheet Image" class="image_info">-->
+
+    <div class="wrap">
+        <h1 class="blind">CSS Cheat Sheet</h1>
+        <ul class="blind">
+            <li>
+                <strong>Selectors</strong>
+                <p>
+                    Lorem...
+                </p>
+            </li>
+            <li>
+                <strong>Box Model</strong>
+                <p>
+                    content, padding, border, margin
+                </p>
+            </li>
+            <li>
+                <strong>Text</strong>
+                <p>font-family: for used, e.g. Helvetica, Arial</p>
+            </li>
+            <li>
+                <strong>Borders and Lists</strong>
+                <p>border: sets border style for all borders, in</p>
+            </li>
+        </ul>
+        <a href="#" class="link_more"><span class="blind">Text 자세히 보기</span></a>
+    </div>
+</body></html>
