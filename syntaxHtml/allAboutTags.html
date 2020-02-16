@@ -7,10 +7,36 @@
 <head>
     <!-- <head> : have tags for metadata, which is data browser can read about this document. -->
 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--
+        * meta http-equiv="X-UA-Compatible"
+        force IE browsers to render this page in the highest available mode.
+        IE=edge : IE8 이상 버전에서 항상 최신 표준 모드로 렌더링
+
+        * 웹서버에서 설정하여 HTTP 헤더를 통해 정보를 지정해도 된다.
+          X-UA-Compatible 속성 값은 IE에서만 작동하는 비표준 속성이기에, W3C 유효성 검사툴(Validator)은 이 속성 값을 오류로 판단한다.
+          아래의 구문을 httpd.conf 혹은 .htaccess에 설정한다.
+
+        # ------------------------------------------------------------------------------ # | Better website experience | # ------------------------------------------------------------------------------ # Force IE to render pages in the highest available mode in the various # cases when it may not: http://hsivonen.iki.fi/doctype/ie-mode.pdf. <IfModule mod_headers.c> Header set X-UA-Compatible "IE=edge" # `mod_headers` can't match based on the content-type, however, we only # want to send this header for HTML pages and not for the other resources <FilesMatch "\.(appcache|crx|css|cur|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|opus|otf|pdf|png|safariextz|svgz?|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$"> Header unset X-UA-Compatible </FilesMatch> </IfModule>
+
+    -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        * meta viewport
+        mobile browsers render pages on viewport with default value of 980px, which is of normal desktop size.
+        set viewport width=device-width for responsive skills to be available like media query.
+    -->
+    <meta name="description" content="HTML 작성에 대한 모든 것, 태그, HTML5">
+    <!--
+        * meta description
+        impact on your search engine optimization. 검색 엔진 최적화
+        Google and other engines will often show the meta description as a summary of the page.
+    -->
+    <meta name="author" content="Youjin Choi">
     <!-- <meta> : other metadata which cannot be declared with semantic metadata tags like link, script, title, etc. -->
 
-    <title>Document</title>
+    <title>HTML 작성에 대한 모든 것</title>
     <!-- <title> : the title of this document visible on browser's tab. -->
 
     <base href="../">
