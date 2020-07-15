@@ -1,0 +1,49 @@
+/* reset */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	background-color: white;
+	/* default */
+	width: auto;
+	height: auto;
+	border-bottom: 1px solid lightgray;
+}
+
+.header__container {
+	width: 980px;
+	margin: auto;
+}
+
+.header__left {
+	padding: 20px 0;
+}
+
+.header__logo {
+	float: left;
+	margin-right: 5px;
+}
+
+/* change the level from inline to block to fill the space */
+.header__logo img {
+	display: block;
+}
+
+.header__menu--item {
+	float: left;
+	/* margin-right: 10px; */
+	padding: 8px 10px;
+}
+
+.clear-fix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* contain the floated items by creating a new block formatting context */
+/* .header__menu {
+    overflow: hidden;
+} */
