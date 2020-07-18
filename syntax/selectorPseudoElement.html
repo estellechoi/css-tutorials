@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        /*
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style>
+			/*
             * 가상 요소 선택자 (::) 요소의 특정 상태인 요소에만 스타일 적용
             * 가상 클래스 선택자 (:) 요소가 특정 상태일 때 그 요소에 스타일 적용
 
         */
-        p::first-line {
-            color: dodgerblue;
-            text-transform: uppercase;
-        }
+			p::first-line {
+				color: dodgerblue;
+				text-transform: uppercase;
+			}
 
-    </style>
-</head>
+			/* get a pseudo inline element */
+			p::before {
+				content: "Before";
+			}
 
-<body>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis porttitor ligula. Duis eget porta justo. Donec enim sapien, vehicula semper felis ac, varius ornare ex. Donec congue lectus velit, ac malesuada eros porta a. Integer at velit sed sem placerat malesuada vitae in mauris. Vestibulum molestie risus nec sem venenatis, at suscipit ex eleifend. Praesent vestibulum est in nisi tempus fermentum. Pellentesque tristique, sapien non accumsan porttitor, arcu ex tristique nunc, ac mollis augue velit eget ligula. Praesent porttitor aliquam vestibulum. Nam ornare arcu at augue scelerisque facilisis ac non ex. Morbi tempor elit ac dolor suscipit ullamcorper. Pellentesque et dui sit amet est rutrum ultrices. Mauris ultricies nec augue ac lobortis. Duis id egestas turpis. Praesent neque enim, gravida vitae aliquam ac, imperdiet id elit.
-    </p>
-</body>
+			p::after {
+				content: "After";
+			}
+		</style>
+	</head>
 
+	<body>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis
+			porttitor ligula. Duis eget porta justo. Donec enim sapien, vehicula
+			semper felis ac, varius ornare ex. Donec congue lectus velit, ac malesuada
+			eros porta a. Integer at velit sed sem placerat malesuada vitae in mauris.
+			Vestibulum molestie risus nec sem venenatis, at suscipit ex eleifend.
+			Praesent vestibulum est in nisi tempus fermentum. Pellentesque tristique,
+			sapien non accumsan porttitor, arcu ex tristique nunc, ac mollis augue
+			velit eget ligula. Praesent porttitor aliquam vestibulum. Nam ornare arcu
+			at augue scelerisque facilisis ac non ex. Morbi tempor elit ac dolor
+			suscipit ullamcorper. Pellentesque et dui sit amet est rutrum ultrices.
+			Mauris ultricies nec augue ac lobortis. Duis id egestas turpis. Praesent
+			neque enim, gravida vitae aliquam ac, imperdiet id elit.
+		</p>
+	</body>
 </html>
