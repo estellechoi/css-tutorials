@@ -1,49 +1,51 @@
 <html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			/* for 속성이 있는 요소 */
+			[for] {
+				color: dodgerblue;
+			}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-    [for=emailInput] {
-      color: orange;
-    }
+			[for="emailInput"] {
+				color: orange;
+			}
 
-    /* for 속성의 값이 "p"로 시작하는 요소  */
-    [for^="p"] {
-      color: tomato;
-    }
+			/* for 속성의 값이 "p"로 시작하는 요소  */
+			[for^="p"] {
+				color: tomato;
+			}
 
-    /* type 속성의 값이 "n"으로 끝나는 요소 */
-    [type$="n"] {
-      border: 1px solid MediumSeaGreen;
-    }
+			/* type 속성의 값이 "n"으로 끝나는 요소 */
+			[type$="n"] {
+				border: 1px solid MediumSeaGreen;
+			}
 
-    input[type=text],
-    [type=password] {
-      border: 1px solid DodgerBlue;
-      height: 35px;
-      color: DodgerBlue;
-    }
-  </style>
-</head>
+			input[type="text"],
+			[type="password"] {
+				border: 1px solid DodgerBlue;
+				height: 35px;
+				color: DodgerBlue;
+			}
+		</style>
+	</head>
 
-<body>
-  <h3>Attribute Selector</h3>
-  <div class="bold">
-    <span class="small">Lorem ipsum dolor sit amet</span>
-  </div>
-  <div>
-    <label for="emailInput">Email</label>
-    <input type="text" id="emailInput">
-    <br>
-    <label for="passwordInput">Password</label>
-    <input type="password" id="passwordInput">
-    <br>
-    <input type="button" value="Click">
-
-  </div>
-</body>
-
+	<body>
+		<h3>Attribute Selector</h3>
+		<div class="bold">
+			<span class="small">Lorem ipsum dolor sit amet</span>
+		</div>
+		<div>
+			<label for="emailInput">Email</label>
+			<input type="text" id="emailInput" />
+			<br />
+			<label for="passwordInput">Password</label>
+			<input type="password" id="passwordInput" />
+			<br />
+			<input type="button" value="Click" />
+		</div>
+	</body>
 </html>
