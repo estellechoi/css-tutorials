@@ -1,0 +1,51 @@
+@import "main", "custom"; // importing mian.scss, custom.scss
+
+.container {
+	// variable
+	$size: 300px !global; // this variable is declared as global.
+	$yellow: yellow !global;
+	$color-main: $yellow; // using a variable to define a variable.
+	$url-main: "/static/";
+
+	// .container .parent
+	.parent {
+		width: $size * 2;
+		height: $size * 2;
+		background-color: tomato;
+		background-image: url(#{$url-main}"test.png");
+	}
+
+	// 상위 요소 치환 (& = .container)
+	// .container.blind
+	&.blind {
+		display: none;
+	}
+
+	&--active {
+		display: block;
+	}
+
+	// border: 1px solid  $color-main;
+	border: {
+		width: 1px;
+		style: solid;
+		color: $color-main;
+	}
+
+	// (just) .event, but the variables can be still used.
+	@at-root .event {
+		width: $size;
+		height: $size;
+	}
+}
+
+.box-addi {
+	$size: 150px; // 변수 재정의
+	$yellow: lightyellow !default; // if having any same named variable, i will use the default value.
+
+	color: $yellow;
+	width: $size;
+}
+
+// This comment is not compiled to CSS
+/* This is yes. */
