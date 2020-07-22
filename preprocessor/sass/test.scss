@@ -1,5 +1,8 @@
 @import "main", "custom"; // importing mian.scss, custom.scss
 
+// This comment is not compiled to CSS
+/* This is yes. */
+
 .container {
 	// variable
 	$size: 300px !global; // this variable is declared as global.
@@ -11,8 +14,14 @@
 	.parent {
 		width: $size * 2;
 		height: $size * 2;
-		background-color: tomato;
 		background-image: url(#{$url-main}"test.png");
+		// background-color: tomato;
+		$bg-color: rgba(10, 20, 30, 0.5);
+		background-color: opacify($bg-color, 0.3); // opacity 0.5 + 0.3 ==> 0.8
+		background-color: transparentize(
+			$bg-color,
+			0.3
+		); // opacity 0.5 - 0.3 ==> 0.2
 	}
 
 	// 상위 요소 치환 (& = .container)
@@ -47,5 +56,214 @@
 	width: $size;
 }
 
-// This comment is not compiled to CSS
-/* This is yes. */
+// @if @else if @else
+$wid: 100px;
+
+.item {
+	display: block;
+	@if ($wid > 50px and $wid <= 100px) {
+		width: 400px;
+	}
+
+	@if not($wid == 100px) {
+		height: $wid;
+	} @else {
+		height: $wid + 1px;
+	}
+
+	@if $wid < 30px or $wid > 150px {
+		width: 500px;
+	} @else if $wid == 20px or $wid == 150px {
+		width: 600px;
+	}
+}
+
+// @mixin 재활용
+@mixin size($w: 100px, $h: 100px) {
+	// for me
+	width: $w;
+	height: $h;
+	background-color: oldlace;
+
+	// me::after
+	&::after {
+		content: ".";
+	}
+
+	// me span.icon
+	span.icon {
+		background-color: black;
+		color: oldlace;
+	}
+}
+
+.modal-1 {
+	@include size(100px, 100px);
+}
+
+.modal-2 {
+	@include size($h: 200px);
+}
+
+.modal-3 {
+	@include size; // default value is used.
+}
+
+@mixin dashed-border($w: 1px, $color: black, $bg...) {
+	border: $w dashed $color;
+}
+
+.modal-4 {
+	@include dashed-border;
+}
+
+.modal-4 {
+	@include dashed-border($color: dodgerblue);
+}
+
+@mixin bg-color($color, $bg-color...) {
+	color: $color;
+	background-color: $bg-color;
+}
+
+.modal-4 {
+	@include dashed-border($color: dodgerblue);
+	// 	@include bg-color(pink, orange);
+	$color: pink, orange;
+	@include bg-color($color...);
+}
+
+@mixin font($style: normal, $size: 16px) {
+	font: {
+		style: $style;
+		size: $size;
+	}
+
+	@content;
+}
+
+.modal-5 {
+	$font-val: (
+		style: italic,
+		size: 22px,
+	);
+	@include font($font-val...);
+}
+
+.modal-6 {
+	@include font(italic, 15px) {
+		display: block; // this style is added at the position of @content in mixin.
+	}
+}
+
+@mixin positionCenter($w, $h, $p: absolute) {
+	@if (
+		$p == absolute or $p == fixed or not $p == relative or not $p == static
+	) {
+		width: if(unitless($w), #{$w}px, $w);
+		height: if(unitless($h), #{$h}px, $h);
+		position: $p;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: 0;
+	}
+}
+
+.box1 {
+	@include positionCenter(10, 20);
+}
+
+// but @extend syntax is not recommended, @mixin can replace it completely.
+.btn {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+
+.btn-danger {
+	@extend .btn;
+	background-color: yellow;
+}
+
+// @function
+@function half-width($w) {
+	@return $w * 2;
+}
+
+.modal-7 {
+	width: half-width(200px);
+}
+
+@function columns($n: 1, $total: 12, $width: 1200px) {
+	@return ($n / $total) * $width;
+}
+
+.col {
+	$width: 980px;
+	width: if(
+		$width > 900px,
+		$width,
+		null
+	); // if function (condition, if true, if false)
+
+	.item:nth-child(1) {
+		width: columns(1, $width: $width);
+	}
+
+	.item:nth-child(2) {
+		width: columns(8, $width: $width);
+	}
+}
+
+// @for
+// before 3 from 1 ==> 1, 2.
+// @for $i from 1 to 3 {
+
+// }
+
+// 3 times from 1
+@for $i from 1 through 3 {
+	.item:nth-child(#{$i}) {
+		width: 2px * $i;
+	}
+}
+
+// @each - list
+$colors: (crimson, lightyellow, lime, dodgerblue, green, apricot);
+
+@each $item in $colors {
+	$index: index($colors, $item); // index: 1 ~
+
+	.item--font-#{$index} {
+		color: $item;
+	}
+}
+
+// @each - map
+$font-set: (
+	size: 20px,
+	style: italic,
+	weight: 700,
+);
+
+@each $key, $value in $font-set {
+	// $vals: map-values($font-set);
+	$keys: map-keys($font-set);
+	$index: index($keys, $key);
+
+	.text--#{$key} {
+		font-#{$key}: $value;
+	}
+}
+
+// @while -- watch out making infinity!
+$i: 7;
+@while ($i > 1) {
+	.item--#{$i * 2} {
+		width: 2px * $i;
+	}
+
+	$i: $i - 2;
+}
